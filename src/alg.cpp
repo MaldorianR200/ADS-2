@@ -3,7 +3,7 @@
 #include "alg.h"
 
 
-static double pown(double value, uint16_t n) {
+double pown(double value, uint16_t n) {
   double result = 1;
   for (int i = 0; i < n; i++) {
     result *= value;
@@ -11,7 +11,7 @@ static double pown(double value, uint16_t n) {
   return result;
 }
 
-static uint64_t fact(uint16_t n) {
+uint64_t fact(uint16_t n) {
   if (n == 0 || n == 1) {
     return 1;
   } else {
