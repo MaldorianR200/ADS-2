@@ -26,11 +26,10 @@ double calcItem(double x, uint16_t n) {
 }
 
 double expn(double x, uint16_t count) {
-  double ex = 1, p = 1, f = 1;
+  double ex = 1, n = 1;
   for (int i = 0; i < count; i++) {
-    ex += calcItem(p, f);
-    p++;
-    f++;
+    ex += calcItem(x, n);
+    n++;
   }
   return ex;
 }
