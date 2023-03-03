@@ -28,7 +28,7 @@ double calcItem(double x, uint16_t n) {
 double expn(double x, uint16_t count) {
   double ex = 1, p = 1, f = 1;
   for (int i = 0; i < count; i++) {
-    ex += (pown(x, p) / fact(f));
+    ex += calcItem(p, f);
     p++;
     f++;
   }
@@ -36,9 +36,10 @@ double expn(double x, uint16_t count) {
 }
 
 double sinn(double x, uint16_t count) {
-  double result = 0, n = 1;
+  double result = 0.0, n = 1;
   for (int i = 0; i < count; i++) {
     result += pown(-1, n - 1) * calcItem(x, 2 * n - 1);
+    n++;
   }
   return result;
 }
@@ -47,6 +48,7 @@ double cosn(double x, uint16_t count) {
   double result = 0, n = 1;
   for (int i = 0; i < count; i++) {
     result += pown(-1, n - 1) * calcItem(x, 2 * n - 2);
+    n++;
   }
   return result;
 }
